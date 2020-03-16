@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="hu"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>IfStatementRunner.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">testing-project</a> &gt; <a href="index.source.html" class="el_package">conditionals</a> &gt; <span class="el_source">IfStatementRunner.java</span></div><h1>IfStatementRunner.java</h1><pre class="source lang-java linenums">package conditionals;
+
+<span class="nc" id="L3">public class IfStatementRunner {</span>
+
+    public static void main(String[] args) {
+<span class="nc" id="L6">        puzzle5();</span>
+<span class="nc" id="L7">    }</span>
+
+    private static void puzzle1() {
+<span class="nc" id="L10">        int k = 15;</span>
+<span class="nc bnc" id="L11" title="All 2 branches missed.">        if (k &gt; 20) {</span>
+<span class="nc" id="L12">            System.out.println(1);</span>
+<span class="nc bnc" id="L13" title="All 2 branches missed.">        } else if (k &gt; 10) {</span>
+<span class="nc" id="L14">            System.out.println(2);</span>
+<span class="nc bnc" id="L15" title="All 2 branches missed.">        } else if (k &lt; 20) {</span>
+<span class="nc" id="L16">            System.out.println(3);</span>
+        } else {
+<span class="nc" id="L18">            System.out.println(4);</span>
+        }
+
+<span class="nc" id="L21">    }</span>
+
+    private static void puzzle2() {
+<span class="nc" id="L24">        int l = 15;</span>
+
+<span class="nc bnc" id="L26" title="All 2 branches missed.">        if (l &lt; 20)</span>
+<span class="nc" id="L27">            System.out.println(&quot;l&lt;20&quot;);//</span>
+<span class="nc bnc" id="L28" title="All 2 branches missed.">        if (l &gt; 20)</span>
+<span class="nc" id="L29">            System.out.println(&quot;l&gt;20&quot;);</span>
+        else
+<span class="nc" id="L31">            System.out.println(&quot;Who am I?&quot;);//</span>
+<span class="nc" id="L32">    }</span>
+
+
+
+    private static void puzzle3() {
+<span class="nc" id="L37">        int m = 15;</span>
+
+<span class="nc bnc" id="L39" title="All 2 branches missed.">        if(m&gt;20)</span>
+<span class="nc bnc" id="L40" title="All 2 branches missed.">            if(m&lt;20)</span>
+<span class="nc" id="L41">                System.out.println(&quot;m&gt;20&quot;);</span>
+            else
+<span class="nc" id="L43">                System.out.println(&quot;Who am I?&quot;);</span>
+<span class="nc" id="L44">    }</span>
+
+
+    private static void puzzle5() {
+<span class="nc" id="L48">        int number = 5;</span>
+<span class="nc bnc" id="L49" title="All 2 branches missed.">        if(number &lt; 0)</span>
+<span class="nc" id="L50">            number = number + 10;</span>
+<span class="nc" id="L51">        number++;</span>
+<span class="nc" id="L52">        System.out.println(number);</span>
+<span class="nc" id="L53">    }</span>
+
+    private static void basicNestedIfElse() {
+<span class="nc" id="L56">        int i = 24;</span>
+        // i is 25
+        // i is 24
+        // i is neither 25 or 24
+<span class="nc bnc" id="L60" title="All 2 branches missed.">        if (i == 25) {</span>
+<span class="nc" id="L61">            System.out.println(&quot;i = 25&quot;);</span>
+<span class="nc bnc" id="L62" title="All 2 branches missed.">        } else if (i == 24) {</span>
+<span class="nc" id="L63">            System.out.println(&quot;i = 24&quot;);</span>
+<span class="nc bnc" id="L64" title="All 2 branches missed.">        } else if (i == 23) {</span>
+<span class="nc" id="L65">            System.out.println(&quot;i = 23&quot;);</span>
+        } else {
+<span class="nc" id="L67">            System.out.println(&quot;i != 24 and i !=25 and i !=23&quot;);</span>
+        }
+<span class="nc" id="L69">    }</span>
+
+}
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="hu"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>FunctionalProgrammingRunner.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">testing-project</a> &gt; <a href="index.source.html" class="el_package">functionalprogramming</a> &gt; <span class="el_source">FunctionalProgrammingRunner.java</span></div><h1>FunctionalProgrammingRunner.java</h1><pre class="source lang-java linenums">package functionalprogramming;
+
+import java.util.List;
+
+<span class="nc" id="L5">public class FunctionalProgrammingRunner {</span>
+
+    public static void main(String[] args) {
+<span class="nc" id="L8">        List&lt;String&gt; list = List.of(&quot;Apple&quot;, &quot;Bat&quot;, &quot;Cat&quot;,</span>
+                &quot;Dog&quot;);
+<span class="nc" id="L10">        printWithFPWithFiltering(list);</span>
+
+<span class="nc" id="L12">    }</span>
+
+    private static void printBasic(List&lt;String&gt; list) {
+<span class="nc bnc" id="L15" title="All 2 branches missed.">        for (String string : list) {</span>
+<span class="nc" id="L16">            System.out.println(string);</span>
+<span class="nc" id="L17">        }</span>
+<span class="nc" id="L18">    }</span>
+
+    private static void printBasicWithFiltering(
+            List&lt;String&gt; list) {
+<span class="nc bnc" id="L22" title="All 2 branches missed.">        for (String string : list) {</span>
+<span class="nc bnc" id="L23" title="All 2 branches missed.">            if (string.endsWith(&quot;at&quot;)) {</span>
+<span class="nc" id="L24">                System.out.println(string);</span>
+            }
+<span class="nc" id="L26">        }</span>
+<span class="nc" id="L27">    }</span>
+
+    private static void printWithFP(List&lt;String&gt; list) {
+<span class="nc" id="L30">        list.stream().forEach(element -&gt; System.out</span>
+<span class="nc" id="L31">                .println(&quot;element - &quot; + element));</span>
+<span class="nc" id="L32">    }</span>
+
+    private static void printWithFPWithFiltering(List&lt;String&gt; list) {
+<span class="nc" id="L35">        list.stream()</span>
+<span class="nc" id="L36">                .filter(element -&gt; element.endsWith(&quot;at&quot;))</span>
+<span class="nc" id="L37">                .forEach(element -&gt; System.out.println(&quot;element - &quot; + element));</span>
+<span class="nc" id="L38">    }</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>

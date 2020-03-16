@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="hu"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Rectangle.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">testing-project</a> &gt; <a href="index.source.html" class="el_package">oop</a> &gt; <span class="el_source">Rectangle.java</span></div><h1>Rectangle.java</h1><pre class="source lang-java linenums">package oop;
+
+public class Rectangle {
+
+    //state
+    private int length;
+    private int width;
+
+    //creation
+<span class="fc" id="L10">    public Rectangle(int length, int width) {</span>
+<span class="fc" id="L11">        this.length = length;</span>
+<span class="fc" id="L12">        this.width = width;</span>
+<span class="fc" id="L13">    }</span>
+
+
+    //operations
+    public int getLength() {
+<span class="fc" id="L18">        return length;</span>
+    }
+
+    public void setLength(int length) {
+<span class="fc" id="L22">        this.length = length;</span>
+<span class="fc" id="L23">    }</span>
+
+    public int getWidth() {
+<span class="fc" id="L26">        return width;</span>
+    }
+
+    public void setWidth(int width) {
+<span class="fc" id="L30">        this.width = width;</span>
+<span class="fc" id="L31">    }</span>
+
+    public int area() {
+<span class="fc" id="L34">        return length * width;</span>
+    }
+
+    public int perimeter() {
+<span class="fc" id="L38">        return 2 * (length + width);</span>
+    }
+
+    public String toString() {
+<span class="fc" id="L42">        return String.format(&quot;length - %d width - %d area - %d perimeter - %d&quot;,</span>
+<span class="fc" id="L43">                length, width, area(), perimeter());</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>

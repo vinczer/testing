@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="hu"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>LambdaBehindTheScreensRunner.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">testing-project</a> &gt; <a href="index.source.html" class="el_package">functionalprogramming</a> &gt; <span class="el_source">LambdaBehindTheScreensRunner.java</span></div><h1>LambdaBehindTheScreensRunner.java</h1><pre class="source lang-java linenums">package functionalprogramming;
+
+import java.util.List;
+import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.function.Predicate;
+
+<span class="nc" id="L8">class EvenNumberPredicate implements Predicate&lt;Integer&gt; {</span>
+
+    @Override
+    public boolean test(Integer number) {
+<span class="nc bnc" id="L12" title="All 2 branches missed.">        return number%2 == 0;</span>
+    }
+
+}
+
+<span class="nc" id="L17">class SystemOutConsumer implements Consumer&lt;Integer&gt; {</span>
+
+    @Override
+    public void accept(Integer number) {
+<span class="nc" id="L21">        System.out.println(number);</span>
+<span class="nc" id="L22">    }</span>
+
+}
+
+<span class="nc" id="L26">class NumberSquareMapper implements Function&lt;Integer, Integer&gt; {</span>
+
+    @Override
+    public Integer apply(Integer number) {
+<span class="nc" id="L30">        return number * number;</span>
+    }
+
+}
+
+<span class="nc" id="L35">public class LambdaBehindTheScreensRunner {</span>
+
+
+
+    public static void main(String[] args) {
+
+<span class="nc" id="L41">        List.of(23,43,34,45,36,48).stream()</span>
+<span class="nc bnc" id="L42" title="All 2 branches missed.">                .filter(n -&gt; n%2 ==0)</span>
+<span class="nc" id="L43">                .map(n -&gt; n * n)</span>
+<span class="nc" id="L44">                .forEach(e -&gt; System.out.println(e));</span>
+
+<span class="nc" id="L46">        List.of(23,43,34,45,36,48).stream()</span>
+<span class="nc" id="L47">                .filter(new EvenNumberPredicate())</span>
+<span class="nc" id="L48">                .map(new NumberSquareMapper())</span>
+<span class="nc" id="L49">                .forEach(new SystemOutConsumer());</span>
+
+        //.map(n -&gt; n * n)
+        //&lt;R&gt; Stream&lt;R&gt; map(Function&lt;? super T, ? extends R&gt; mapper);
+        // R apply(T t);
+
+        //.filter(new EvenNumberPredicate())
+        //Stream&lt;T&gt; filter(Predicate&lt;? super T&gt; predicate);
+        //boolean test(T t);
+
+        //.forEach(e -&gt; System.out.println(e));
+        //Consumer&lt;? super T&gt; action
+        //void accept(T t);
+
+        //1.Storing functions in variables
+        //2.Passing functions to methods &lt;=
+        //3.Returning functions from methods
+
+<span class="nc" id="L67">        Predicate&lt;? super Integer&gt; evenPredicate = createEvenPredicate();</span>
+<span class="nc bnc" id="L68" title="All 2 branches missed.">        Predicate&lt;? super Integer&gt; oddPredicate = n -&gt; n%2 ==1;</span>
+
+<span class="nc" id="L70">        List.of(23,43,34,45,36,48).stream()</span>
+<span class="nc" id="L71">                .filter(evenPredicate)</span>
+<span class="nc" id="L72">                .map(n -&gt; n * n)</span>
+<span class="nc" id="L73">                .forEach(e -&gt; System.out.println(e));</span>
+<span class="nc" id="L74">    }</span>
+
+    private static Predicate&lt;? super Integer&gt; createEvenPredicate() {
+<span class="nc bnc" id="L77" title="All 2 branches missed.">        return n -&gt; n%2 ==0;</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>

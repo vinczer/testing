@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="hu"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>MyNumber.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">testing-project</a> &gt; <a href="index.source.html" class="el_package">loops</a> &gt; <span class="el_source">MyNumber.java</span></div><h1>MyNumber.java</h1><pre class="source lang-java linenums">package loops;
+
+public class MyNumber {
+
+    private int number;
+
+<span class="fc" id="L7">    public MyNumber(int number) {</span>
+<span class="fc" id="L8">        this.number = number;</span>
+<span class="fc" id="L9">    }</span>
+
+    public void setNumber(int number) {
+<span class="fc" id="L12">        this.number = number;</span>
+<span class="fc" id="L13">    }</span>
+
+    public boolean isPrime() {
+        // 2 to number-1
+        // How can check if a number is divisible by 2?
+
+<span class="fc bfc" id="L19" title="All 2 branches covered.">        if (number &lt; 2) {</span>
+<span class="fc" id="L20">            return false;</span>
+        }
+
+<span class="fc bfc" id="L23" title="All 2 branches covered.">        for (int i = 2; i &lt;= number - 1; i++) {</span>
+<span class="fc bfc" id="L24" title="All 2 branches covered.">            if (number % i == 0) {</span>
+<span class="fc" id="L25">                return false;</span>
+            }
+        }
+
+<span class="fc" id="L29">        return true;</span>
+    }
+
+    public int sumUptoN() {
+<span class="fc" id="L33">        int sum = 0;</span>
+
+<span class="fc bfc" id="L35" title="All 2 branches covered.">        for (int i = 1; i &lt;= number; i++) {</span>
+<span class="fc" id="L36">            sum = sum + i;</span>
+        }
+
+<span class="fc" id="L39">        return sum;</span>
+    }
+
+    public int sumOfDivisors() {
+        // 6 except 1 , 6 =&gt; 2,3
+        // 2 + 3 + 4 + 5
+
+<span class="fc" id="L46">        int sum = 0;</span>
+
+<span class="fc bfc" id="L48" title="All 2 branches covered.">        for (int i = 2; i &lt;= number - 1; i++) {</span>
+<span class="pc bpc" id="L49" title="1 of 2 branches missed.">            if (number % i == 0) {</span>
+<span class="nc" id="L50">                sum = sum + i;</span>
+            }
+        }
+
+<span class="fc" id="L54">        return sum;</span>
+    }
+
+    public void printNumberTriangle() {
+        // 1
+        // 1 2
+        // 1 2 3
+        // 1 2 3 4
+        // 1 2 3 4 5
+
+<span class="nc bnc" id="L64" title="All 2 branches missed.">        for (int i = 1; i &lt;= number; i++) {</span>
+<span class="nc bnc" id="L65" title="All 2 branches missed.">            for (int j = 1; j &lt;= i; j++) {</span>
+<span class="nc" id="L66">                System.out.print(j + &quot; &quot;);</span>
+            }
+<span class="nc" id="L68">            System.out.println();</span>
+        }
+
+<span class="nc" id="L71">    }</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>
